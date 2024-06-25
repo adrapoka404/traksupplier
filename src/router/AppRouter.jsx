@@ -19,6 +19,8 @@ export const AppRouter = () => {
   }
 
   return (
+    <>
+   
     <Routes>
       {status === "not-authenticated" ? (
         <>
@@ -32,5 +34,6 @@ export const AppRouter = () => {
         </>
       )}
     </Routes>
+    </>
   );
 };

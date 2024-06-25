@@ -567,18 +567,27 @@ export const HomePage = () => {
                 </p>
               </div>
             </div>
+          </div>
+          <div style={{
+            width: '80%',
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
             <OwlCarousel
               responsive={{
                 100: { items: 1 },
                 600: { items: 2 },
                 1000: { items: 3 },
               }}
-              className="rs-carousel owl-carousel "
-              style={{ padding: 10 }}
+              style={{ width: "100%" }}
+              dots={false}
+              autoplay
+              autoplayTimeout={3000}
               loop
-              margin={10}
             >
-              <div className="blog-wrap">
+              <div className="blog-wrap" style={{ margin: 20 }} >
                 <div className="img-part">
                   <img src={bl1} alt="" />
                 </div>
@@ -592,7 +601,7 @@ export const HomePage = () => {
                   </p>
                 </div>
               </div>
-              <div className="blog-wrap">
+              <div className="blog-wrap" style={{ margin: 20 }}>
                 <div className="img-part">
                   <img src={bl2} alt="" />
                 </div>
@@ -605,7 +614,7 @@ export const HomePage = () => {
                   </p>
                 </div>
               </div>
-              <div className="blog-wrap">
+              <div className="blog-wrap" style={{ margin: 20 }}>
                 <div className="img-part">
                   <img src={bl3} alt="" />
                 </div>
@@ -618,7 +627,7 @@ export const HomePage = () => {
                   </p>
                 </div>
               </div>
-              <div className="blog-wrap">
+              <div className="blog-wrap" style={{ margin: 20 }}>
                 <div className="img-part">
                   <img src={bl4} alt="" />
                 </div>
