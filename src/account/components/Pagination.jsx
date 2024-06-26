@@ -31,32 +31,32 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
 
   // return <>PAginacion</>;
   return (
-    <div style={{ padding: 10, margin: "auto", width: "50%" }}>
-      <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-      >
-        Prev
-      </button>
-      {pageRange.map((page, index) =>
-        typeof page === "number" ? (
-          <button
-            key={index}
-            onClick={() => onPageChange(page)}
-            className={currentPage === page ? "active" : ""}
-          >
-            {page}
-          </button>
-        ) : (
-          <span key={index}>{page}</span>
-        )
-      )}
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-      >
-        Next
-      </button>
-    </div>
+    <div className="button-container">
+    <button
+      onClick={() => onPageChange(currentPage - 1)}
+      disabled={currentPage === 1}
+    >
+      Prev
+    </button>
+    {pageRange.map((page, index) =>
+      typeof page === "number" ? (
+        <button
+          key={index}
+          onClick={() => onPageChange(page)}
+          className={currentPage === page ? "active" : ""}
+        >
+          {page}
+        </button>
+      ) : (
+        <span key={index}>{page}</span>
+      )
+    )}
+    <button
+      onClick={() => onPageChange(currentPage + 1)}
+      disabled={currentPage === totalPages}
+    >
+      Next
+    </button>
+  </div>
   );
 };

@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import logo from "../../assets/img/logo-dark.png";
+import  "../../assets/css/components/loginPage.css";
 const loginFormFields = {
   loginEmail: "",
   loginPassword: "",
@@ -100,59 +101,11 @@ export const LoginPage = () => {
     setIsFlipped(!isFlipped);
   };
 
-  const Contenedor = styled.div`
-font-family: 'Poppins', sans-serif;
-user-select: none;
-overflow-y: hidden;
-display: flex;
-justify-content: center;
-align-items: center;
-background: hsl(218deg 50% 91%);
-height: 100vh;
-`;
 
-  const Pantalla1 = styled.div`
-background: #ff8b00;
-padding: 2em;
-display: flex;
-flex-direction: column;
-border-radius: 30px;
-box-shadow: 0 0 2em hsl(231deg 62% 94%);
-gap: 2em;
-transition: transform 0.6s;
-transform-style: preserve-3d;
-perspective: 1000px;
 
-${(props) =>
-      props.isFlipped &&
-      css`
-    transform: rotateY(360deg);
-  `}
-`;
-
-  const ContenedorEmailPassword = styled.div`
-background: hsl(0deg 0% 100%);
-padding: 1em;
-display: flex;
-flex-direction: column;
-gap: 0.5em;
-border-radius: 20px;
-color: hsl(0deg 0% 30%);
-`;
-
-  const PieDePagina = styled.div`
-display: flex;
-font-size: 0.7em;
-color: hsl(0deg 0% 37%);
-gap: 14em;
-padding-bottom: 10em;
-span {
-  cursor: pointer;
-}
-`;
-
-  return (<Contenedor>
-    <Pantalla1 isFlipped={isFlipped}>
+  return (
+    <div className="contenedor">
+    <div className={`pantalla1 ${isFlipped ? 'isFlipped' : ''}`}>
       <div>
         <a
           href="/"
@@ -165,14 +118,14 @@ span {
         >
           <img
             style={{ width: 300, alignSelf: 'center' }}
-            src={logo}
+            src={logo} // Adjust the path as necessary
             alt="logo"
           />
         </a>
       </div>
       {!isFlipped ? (
         <>
-          <ContenedorEmailPassword>
+          <div className="contenedorEmailPassword">
             <div className="sec-2">
               <TextField
                 label="Correo"
@@ -183,10 +136,17 @@ span {
                 value={loginEmail}
                 onChange={onLoginInputChange}
                 error={!!loginEmail === '' && formLoginSubmitted}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+                }}
               />
             </div>
-          </ContenedorEmailPassword>
-          <ContenedorEmailPassword>
+          </div>
+          <div className="contenedorEmailPassword">
             <div className="sec-2">
               <TextField
                 label="Contraseña"
@@ -197,21 +157,29 @@ span {
                 value={loginPassword}
                 onChange={onLoginInputChange}
                 error={!!loginPassword === '' && formLoginSubmitted}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+                }}
               />
             </div>
-          </ContenedorEmailPassword>
+          </div>
           <Button
             type="submit"
             variant="contained"
             fullWidth
-            sx={{ backgroundColor: '#ff8b00' }}
+            onClick={loginSubmit}
+            sx={{ backgroundColor: 'white', color: 'black' }}
           >
             Iniciar sesión
           </Button>
         </>
       ) : (
         <>
-          <ContenedorEmailPassword>
+          <div className="contenedorEmailPassword">
             <div className="sec-2">
               <TextField
                 label="Nombre completo"
@@ -220,11 +188,18 @@ span {
                 name="registerName"
                 value={registerName}
                 onChange={onRegisterInputChange}
-                error={!!registerName == "" && formRegisterSubmitted}
+                error={!!registerName === '' && formRegisterSubmitted}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+                }}
               />
             </div>
-          </ContenedorEmailPassword>
-          <ContenedorEmailPassword>
+          </div>
+          <div className="contenedorEmailPassword">
             <div className="sec-2">
               <TextField
                 label="Correo"
@@ -234,11 +209,18 @@ span {
                 name="registerEmail"
                 value={registerEmail}
                 onChange={onRegisterInputChange}
-                error={!!registerEmail == "" && formRegisterSubmitted}
+                error={!!registerEmail === '' && formRegisterSubmitted}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+                }}
               />
             </div>
-          </ContenedorEmailPassword>
-          <ContenedorEmailPassword>
+          </div>
+          <div className="contenedorEmailPassword">
             <div className="sec-2">
               <TextField
                 label="Contraseña"
@@ -248,11 +230,18 @@ span {
                 name="registerPassword"
                 value={registerPassword}
                 onChange={onRegisterInputChange}
-                error={!!registerPassword == "" && formRegisterSubmitted}
+                error={!!registerPassword === '' && formRegisterSubmitted}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+                }}
               />
             </div>
-          </ContenedorEmailPassword>
-          <ContenedorEmailPassword>
+          </div>
+          <div className="contenedorEmailPassword">
             <div className="sec-2">
               <TextField
                 label="Repite contraseña"
@@ -262,28 +251,34 @@ span {
                 name="registerPassword2"
                 value={registerPassword2}
                 onChange={onRegisterInputChange}
-                error={!!registerPassword2 == "" && formRegisterSubmitted}
+                error={!!registerPassword2 === '' && formRegisterSubmitted}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      border: 'none',
+                    },
+                  },
+                }}
               />
             </div>
-          </ContenedorEmailPassword>
+          </div>
           <Button
             type="submit"
-            value="Crear cuenta"
-            fullWidth
-            sx={{ backgroundColor: "#ff8b00" }}
             variant="contained"
+            fullWidth
+            onClick={registerSubmit}
+            sx={{ backgroundColor: 'white', color: 'black' }}
           >
             Crear cuenta
           </Button>
         </>
       )}
-      <PieDePagina>
-        <span onClick={handleRegisterClick}>
+      <div className="pieDePagina">
+        <span onClick={handleRegisterClick} style={{ fontSize: 16, color: 'white' }}>
           {isFlipped ? 'Iniciar sesión' : 'Registrarse'}
         </span>
-        <span>¿Olvidaste tu contraseña?</span>
-      </PieDePagina>
-    </Pantalla1>
-  </Contenedor>
+      </div>
+    </div>
+  </div>
   );
 };

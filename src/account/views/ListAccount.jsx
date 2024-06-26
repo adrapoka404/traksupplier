@@ -145,35 +145,34 @@ export const ListAccount = ({}) => {
 
   return (
     <>
-      <Pagination totalPages={pages} currentPage={page} onPageChange={count} />
-      <div style={{ overflow: scroll }}>
-        <table className="container">
+      <div style={{ overflow: scroll, display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingTop: 30 }}>
+        <table class="containerTable" >
           <thead>
             <tr>
               <th>
-                <h1>ID</h1>
+                ID
               </th>
               <th>
-                <h1>Descripción</h1>
+               Descripción
               </th>
               <th>
-                <h1>Total</h1>
+                Total
               </th>
               {user.admin ? (
                 <th>
-                  <h1>Usuario </h1>
+                  Usuario 
                 </th>
               ) : (
                 ""
               )}
 
               <th>
-                <h1>
+               
                   Fecha <ArrowDropDown />
-                </h1>
+             
               </th>
               <th>
-                <h1>Opciones</h1>
+                Opciones
               </th>
             </tr>
           </thead>
@@ -277,8 +276,8 @@ export const ListAccount = ({}) => {
             ))}
           </tbody>
         </table>
+        <Pagination totalPages={pages} currentPage={page} onPageChange={count} />
       </div>
-      <Pagination totalPages={pages} currentPage={page} onPageChange={count} />
     </>
   );
 };

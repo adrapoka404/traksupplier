@@ -1,0 +1,49 @@
+.contenedor {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  rgb(252, 234, 16);
+    height: 100vh;
+  }
+  
+  .pantalla1 {
+    background: #ff8b00;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    gap: 2em;
+    width: 450px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .pantalla1.isFlipped {
+    transform: rotateY(360deg);
+  }
+  
+  .contenedorEmailPassword {
+    background: hsl(0deg 0% 100%);
+    padding: 0.8em 0em 0.8em 0em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 10px;
+    color: hsl(0deg 0% 30%);
+  }
+  
+  .pieDePagina {
+    display: flex;
+    font-size: 0.7em;
+    color: hsl(0deg 0% 37%);
+    gap: 14em;
+    padding-bottom: 10em;
+  }
+  
+  .pieDePagina span {
+    cursor: pointer;
+  }

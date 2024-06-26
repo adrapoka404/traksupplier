@@ -1,0 +1,128 @@
+.blue {
+    color: #ff8b00;
+}
+
+.yellow {
+    color: #FFF842;
+}
+
+.containerTable th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+}
+.containerTable thead tr {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: white;
+}
+
+.containerTable td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.containerTable {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+    border-radius: 10px;
+}
+
+.containerTable td,
+.containerTable th {
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+/* Background-color of the odd rows */
+.containerTable tr:nth-child(odd) {
+    background-color: #ff8b00;
+}
+
+/* Background-color of the even rows */
+.containerTable tr:nth-child(even) {
+    background-color: rgb(240, 240, 240);
+}
+
+.containerTable th {
+    background-color: #1F2739;
+}
+
+.containerTable td:first-child {
+    color: #FB667A;
+}
+
+.containerTable tr:hover {
+    background-color: rgb(160, 160, 160);
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.containerTable td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+.button-container {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .button-container button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: #A7A1AE;
+    background-color: #2C3446;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  .button-container button:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+    transform: translateY(-3px);
+  }
+  
+  .button-container button:disabled {
+    background-color: #323C50;
+    color: #555;
+    cursor: not-allowed;
+  }
+  
+  .button-container .active {
+    background-color: #185875;
+    color: #FFF842;
+    font-weight: bold;
+  }
+
+@media (max-width: 800px) {
+
+    .containerTable td:nth-child(4),
+    .containerTable th:nth-child(4) {
+        display: none;
+    }
+}
